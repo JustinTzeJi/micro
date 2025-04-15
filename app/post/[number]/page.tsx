@@ -2,7 +2,7 @@ import { getDiscussion } from "@/lib/github";
 import { notFound } from "next/navigation";
 import { GiscusComments } from "@/components/GiscusComments";
 import Link from "next/link";
-import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
+// import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CalendarDaysIcon } from "lucide-react";
