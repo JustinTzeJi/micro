@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { getDiscussion } from "@/lib/github";
 import { notFound } from "next/navigation";
 import { GiscusComments } from "@/components/GiscusComments";
@@ -16,13 +15,13 @@ import {
 
 export const revalidate = 60;
 
-type PostPageProps = {
-  params: { number: string };
-};
+// interface PostPageProps {
+//   params: {
+//     number: string;
+//   };
+// }
 
-export async function generateMetadata({
-  params,
-}: PostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: any) {
   const { number } = await params;
   const postNumber = parseInt(number, 10);
   if (isNaN(postNumber)) return { title: "Post Not Found" };
@@ -37,7 +36,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: any) {
   const { number } = await params;
   const postNumber = parseInt(number, 10);
 
