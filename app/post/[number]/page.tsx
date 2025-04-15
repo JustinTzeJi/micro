@@ -44,9 +44,9 @@ export default async function PostPage({ params }: any) {
     notFound();
   }
 
-  const timeAgo = post
-    ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
-    : "";
+  // const timeAgo = post
+  //   ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
+  //   : "";
 
   return (
     <article className="max-w-3xl mx-2 pb-4 px-6 border-1 rounded-md bg-accent/30">
