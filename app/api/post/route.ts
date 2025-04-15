@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
 import { createDiscussion } from "@/lib/github";
 
+export const runtime = 'edge';
+
 export async function POST(request: Request) {
   const session = await getSession();
   const ownerUsername = process.env.BLOG_OWNER_GITHUB_USERNAME;

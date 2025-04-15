@@ -13,6 +13,8 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 
+export const runtime = 'edge';
+
 export const revalidate = 60;
 
 // interface PostPageProps {
