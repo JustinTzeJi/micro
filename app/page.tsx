@@ -6,7 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const { posts, pageInfo } = await getDiscussions(15);
+  const { posts } = await getDiscussions(15);
+  // const { posts, pageInfo } = await getDiscussions(15);
 
   return (
     <div>
