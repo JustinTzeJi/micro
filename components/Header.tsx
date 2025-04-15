@@ -28,7 +28,7 @@ export function UserProfileHeader({ user, className }: UserProfileHeaderProps) {
 
   return (
     <div className={cn(className)}>
-      <div className="h-40 w-full bg-muted dark:bg-zinc-800"></div>
+      <div className="h-30 md:h-40 w-full bg-muted dark:bg-zinc-800"></div>
       <div className="px-4 pb-4">
         <div className="flex justify-between items-start mb-3">
           <div className="-mt-12 sm:-mt-16 z-10">

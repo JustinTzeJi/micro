@@ -27,8 +27,8 @@ export function GiscusComments({ mappingTerm }: GiscusCommentsProps) {
   }
 
   return (
-    <div className="mt-12 pt-6 border-t">
-      <h2 className="text-l font-semibold mb-4">Comments & Reactions</h2>
+    <div className="pt-6 border-t">
+      {/* <h2 className="text-l font-semibold mb-4">Comments & Reactions</h2> */}
       <div className="max-h-1/4">
         <Giscus
           id="comments"

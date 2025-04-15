@@ -1,17 +1,11 @@
 import { getDiscussion } from "@/lib/github";
 import { notFound } from "next/navigation";
 import { GiscusComments } from "@/components/GiscusComments";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { formatDistanceToNow } from "date-fns/formatDistanceToNow";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
+import { CalendarDaysIcon } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -55,43 +49,30 @@ export default async function PostPage({ params }: any) {
     : "";
 
   return (
-    <article className="max-w-3xl mx-auto px-4">
-      <div className="pb-4">
+    <article className="max-w-3xl mx-2 pb-4 px-6 border-1 rounded-md bg-accent/30">
+
+      <div className="prose lg:prose-lg dark:prose-invert max-w-none py-6">
+        <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
+      </div>
+      <div className="py-4">
         {post.author && (
-          <div className="flex items-center space-x-3 mb-4">
-            <Avatar className="h-10 w-10">
-              <AvatarImage
-                src={post.author.avatarUrl}
-                alt={post.author.login}
-              />
-              <AvatarFallback>{post.author.login.charAt(0)}</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="text-base font-semibold">{post.author.login}</p>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <Link
-                      href={post.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-muted-foreground hover:underline"
-                    >
-                      Posted {timeAgo}
-                    </Link>
-                  </TooltipTrigger>
-                  <TooltipContent>
-                    {new Date(post.createdAt).toString()}
-                  </TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
+          <div className="flex items-center pb-0">
+            <CalendarDaysIcon className="w-4 h-4 mr-1 text-muted-foreground" />
+            <Link
+              href={post.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:underline truncate"
+            >
+              {new Date(post.createdAt).toLocaleDateString('en-US', {
+  day: '2-digit',
+  month: 'long',
+  year: 'numeric',
+  weekday: 'short'
+}).toString()}
+            </Link>
           </div>
         )}
-      </div>
-
-      <div className="prose lg:prose-lg dark:prose-invert max-w-none px-6">
-        <Markdown remarkPlugins={[remarkGfm]}>{post.body}</Markdown>
       </div>
       <GiscusComments mappingTerm={number} />
     </article>
