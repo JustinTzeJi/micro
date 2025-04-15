@@ -1,4 +1,4 @@
-import NextAuth, { AuthOptions, Profile, User } from "next-auth";
+import NextAuth, { AuthOptions, User } from "next-auth";
 import GithubProvider, { GithubProfile } from "next-auth/providers/github";
 import { DefaultSession } from "next-auth";
 
