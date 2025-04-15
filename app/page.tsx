@@ -3,8 +3,6 @@ import { PostCard } from "@/components/PostCard";
 import { PostForm } from "@/components/PostForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const runtime = 'edge';
-
 export const revalidate = 60;
 
 export default async function HomePage() {
