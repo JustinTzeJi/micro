@@ -3,7 +3,7 @@ import { PostCard } from "@/components/PostCard";
 import { PostForm } from "@/components/PostForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
 export default async function HomePage() {
   const { posts } = await getDiscussions(15);

@@ -13,7 +13,7 @@ import {
   TooltipContent,
 } from "@/components/ui/tooltip";
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
 // interface PostPageProps {
 //   params: {
