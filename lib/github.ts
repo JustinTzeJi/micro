@@ -108,6 +108,7 @@ const GET_DISCUSSIONS_QUERY = gql`
         after: $after
         categoryId: $categoryId
         orderBy: { field: CREATED_AT, direction: DESC }
+        states: [OPEN]
       ) {
         pageInfo {
           endCursor
