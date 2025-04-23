@@ -32,7 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col">
+          <div className="flex min-h-screen flex-col border-x shadow-xl">
             <NavHeader />
             <ProfileHeader />
             <main className="flex-1 container">{children}</main>
